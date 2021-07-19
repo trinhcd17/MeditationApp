@@ -67,6 +67,8 @@ class _IntroViewState extends State<IntroView> {
               Column(
                 children: [
                   roundedButton(
+                      backgroundColor: kPrimaryColor,
+                      textColor: Colors.white,
                       screenSize: screenSize,
                       function: () {
                         Get.to(() => LoginView());
@@ -119,6 +121,7 @@ class Background extends StatelessWidget {
         child: Image.asset(
           'assets/images/intro_frame.png',
           height: screenSize.height * 0.7,
+          width: screenSize.width,
           color: Color.fromRGBO(249, 240, 227, 100),
         ),
       ),

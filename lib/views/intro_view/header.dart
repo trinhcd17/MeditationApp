@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Header extends StatelessWidget {
+  final Color color;
   const Header({
     Key key,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -13,6 +15,7 @@ class Header extends StatelessWidget {
       children: [
         HeaderText(
           text: 'Silent',
+          color: color,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5.0),
@@ -21,7 +24,10 @@ class Header extends StatelessWidget {
             height: 25,
           ),
         ),
-        HeaderText(text: 'Moon'),
+        HeaderText(
+          text: 'Moon',
+          color: color,
+        ),
       ],
     );
   }
@@ -29,9 +35,11 @@ class Header extends StatelessWidget {
 
 class HeaderText extends StatelessWidget {
   final String text;
+  final Color color;
   const HeaderText({
     Key key,
     this.text,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -39,7 +47,10 @@ class HeaderText extends StatelessWidget {
     return Text(
       text,
       style: GoogleFonts.lato(
-          fontWeight: FontWeight.w700, fontSize: 16, letterSpacing: 3),
+          fontWeight: FontWeight.w700,
+          fontSize: 16,
+          letterSpacing: 3,
+          color: color == null ? Colors.black : color),
     );
   }
 }

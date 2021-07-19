@@ -94,7 +94,13 @@ class RegisterView extends StatelessWidget {
         SizedBox(
           height: screenSize.height * 0.05,
         ),
-        roundedButton(function: () {}, text: 'Sign up', screenSize: screenSize),
+        roundedButton(
+          backgroundColor: kPrimaryColor,
+          textColor: Colors.white,
+          function: () {},
+          text: 'Sign up',
+          screenSize: screenSize,
+        ),
       ],
     );
   }

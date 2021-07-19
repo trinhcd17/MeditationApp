@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:meditation_app/components/rounded_button.dart';
 import 'package:meditation_app/constants/constants.dart';
+import 'package:meditation_app/views/welcome_view/welcome_view.dart';
 
 class LoginView extends StatelessWidget {
   @override
@@ -76,7 +77,14 @@ class LoginView extends StatelessWidget {
         SizedBox(
           height: screenSize.height * 0.05,
         ),
-        roundedButton(function: () {}, text: 'Login', screenSize: screenSize),
+        roundedButton(
+            backgroundColor: kPrimaryColor,
+            textColor: Colors.white,
+            function: () {
+              Get.off(() => WelcomeView());
+            },
+            text: 'Login',
+            screenSize: screenSize),
       ],
     );
   }
